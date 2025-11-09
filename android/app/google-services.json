@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "866787581975",
+    "project_id": "demopcps-d88d9",
+    "storage_bucket": "demopcps-d88d9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:866787581975:android:2d0ac324d7912a65ddfc52",
+        "android_client_info": {
+          "package_name": "com.example.lab2nd"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD79miydYwAce5ek6W3lcZIsbccYsjVvKk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
