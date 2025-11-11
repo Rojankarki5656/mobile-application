@@ -2,9 +2,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:lab2nd/firebase_options.dart';
 import 'package:lab2nd/pages/chatapp/conversations.dart';
+import 'package:lab2nd/pages/demo/view.dart';
 import 'package:lab2nd/pages/maps/maps.dart';
 import 'package:lab2nd/pages/pages/dashboard.dart';
 import 'package:lab2nd/pages/chatapp/chats.dart';
+import 'package:lab2nd/payments/esewa_payment.dart';
 
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: MapsApp(),
+      home: dashboard(),
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:lab2nd/api/NewsApiCall.dart';
 import 'package:lab2nd/core/static.dart';
 import 'package:lab2nd/pages/pages/detailpage.dart';
 import 'package:lab2nd/model/newsapi.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 class dashboard extends StatefulWidget {
@@ -13,10 +14,18 @@ class dashboard extends StatefulWidget {
 }
 class _dashboardState extends State<dashboard> {
 
+  Future<void> _launchInBrowser(Uri url) async{
+    if (!await launchUrl(
+      url,
+      mode: LaunchMode.externalApplication,
+    )) {
+      throw Exception('Could not launch $url');
+    }
+  }
+
   verticalCard (size, heading, date, String url, actionbutton, Articles? article){
     return GestureDetector(
       onTap: (){
-
         StaticValue.clickedarticle = article;
         Navigator.of(context).push(
           MaterialPageRoute<void>(
@@ -150,10 +159,13 @@ class _dashboardState extends State<dashboard> {
           ),
         ),
         Positioned(
-            right: 15,
-            bottom: 15,
-            child: Icon(Icons.play_circle,color: Colors.white,size: 30,)
-        )
+              right: 15,
+              bottom: 15,
+              child: GestureDetector(
+                  onTap: () => _launchInBrowser(Uri.parse(url)),
+                  child: Icon(Icons.play_circle,color: Colors.white,size: 30,))
+          ),
+
       ],
     );
   }
